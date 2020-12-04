@@ -366,6 +366,7 @@
 		            dataPD.push(parseInt(Object.entries(JSONdata)[i][1].cases));
 		        }
 		    }
+		    window.myDoughnut.options.title.text = 'Personas afectadas en el estado de ' + stateD;
 		    window.myDoughnut.update();
 		}
 

@@ -27,17 +27,29 @@ totalCases();
 
 function topThree() {
 
-    addElement('top1', 'p', 'top1Name', sortedData[0][0]);
-    addElement('top1', 'p', 'top1Cases', sortedData[0][1].cases + ' Confirmados');
-    addElement('top1', 'p', 'top1Deaths', sortedData[0][1].deaths + ' Defunciones');
+    addElement('top1', 'p', 'top1Name', JSONdata.Texas.state);
+    addElement('top1', 'p', 'top1Cases', JSONdata.Texas.cases + ' Confirmados');
+    addElement('top1', 'p', 'top1Deaths', JSONdata.Texas.deaths + ' Defunciones');
 
-    addElement('top2', 'p', 'top2Name', sortedData[1][0]);
-    addElement('top2', 'p', 'top2Cases', sortedData[1][1].cases + ' Confirmados');
-    addElement('top2', 'p', 'top2Deaths', sortedData[1][1].deaths + ' Defunciones');
+    document.getElementById('top1Name').style = "text-align: center;";
+    document.getElementById('top1Cases').style = "font-size: small; color: #9b850d; text-align: center;";
+    document.getElementById('top1Deaths').style = "font-size: small; color: #be0707; text-align: center;";
 
-    addElement('top3', 'p', 'top3Name', sortedData[2][0]);
-    addElement('top3', 'p', 'top3Cases', sortedData[2][1].cases + ' Confirmados');
-    addElement('top3', 'p', 'top3Deaths', sortedData[2][1].deaths + ' Defunciones');
+    addElement('top2', 'p', 'top2Name', JSONdata.California.state);
+    addElement('top2', 'p', 'top2Cases', JSONdata.California.cases + ' Confirmados');
+    addElement('top2', 'p', 'top2Deaths', JSONdata.California.deaths + ' Defunciones');
+
+    document.getElementById('top2Name').style = "text-align: center;";
+    document.getElementById('top2Cases').style = "font-size: small; color: #9b850d; text-align: center;";
+    document.getElementById('top2Deaths').style = "font-size: small; color: #be0707; text-align: center;";
+
+    addElement('top3', 'p', 'top3Name', JSONdata.Florida.state);
+    addElement('top3', 'p', 'top3Cases', JSONdata.Florida.cases + ' Confirmados');
+    addElement('top3', 'p', 'top3Deaths', JSONdata.Florida.deaths + ' Defunciones');
+
+    document.getElementById('top3Name').style = "text-align: center;";
+    document.getElementById('top3Cases').style = "font-size: small; color: #9b850d; text-align: center;";
+    document.getElementById('top3Deaths').style = "font-size: small; color: #be0707; text-align: center;";
 }
 
 function search(nameKey, myArray) {
