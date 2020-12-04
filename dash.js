@@ -12,6 +12,14 @@ dropdownFill();
 document.getElementById('dropdownState').style.zIndex = 100000;
 var selectedState = 'Todos los estados';
 var sortedData = Object.entries(JSONdata);
+
+function compare(a, b) {
+    if (a[1].cases > b[1].cases) return 1;
+    if (b[1].cases > a[1].cases) return -1;
+
+    return 0;
+}
+
 sortedData.sort(compare)
 addElement('filter', 'span', 'currentState', ' - Todos los estados ');
 topThree();
@@ -60,12 +68,7 @@ function totalCases() {
 
 }
 
-function compare(a, b) {
-    if (a[1].cases > b[1].cases) return 1;
-    if (b[1].cases > a[1].cases) return -1;
 
-    return 0;
-}
 
 function stateFilter(name) {
 
@@ -77,7 +80,7 @@ function stateFilter(name) {
     addElement('filter', 'span', 'currentState', ' - ' + name);
     totalCases();
     if (selectedState != 'Total de estados')
-        drawDogChart();
+        updateDogChart();
 }
 
 function ObjectLength(object) {
